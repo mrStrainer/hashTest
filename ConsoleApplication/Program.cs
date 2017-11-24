@@ -11,12 +11,14 @@ namespace ConsoleApplication
             
             Console.WriteLine("Pass:");
             var pass = Console.ReadLine();
-            Console.ReadLine();
-            var hashedPass = SecurePasswordHasher.Hash(pass);
-            var isEqual = SecurePasswordHasher.Verify(pass, hashedPass);
+            
+            var hashedPass = SecurePasswordHasher.SecurePasswordHasher.Hash(pass);
+            var isEqual = SecurePasswordHasher.SecurePasswordHasher.Verify(pass, hashedPass);
             
             Console.WriteLine($"User: { user }\n Pass: { pass }");
             Console.WriteLine($"Hashed pass: { hashedPass } \n Verification: { isEqual }");
+
+            Console.ReadLine();
         }
     }
 }
